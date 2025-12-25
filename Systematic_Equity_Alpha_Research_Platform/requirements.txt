@@ -1,0 +1,8 @@
+numpy
+pandas
+yfinance
+pyarrow
+scikit-learn
+pytest
+xgboost
+lightgbm

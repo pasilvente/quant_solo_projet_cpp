@@ -10,3 +10,10 @@ cmake-build-*/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Python venv
+.venv/
+
+# Data for equity alpha project
+Systematic_Equity_Alpha_Research_Platform/data/raw/
+Systematic_Equity_Alpha_Research_Platform/data/clean/
