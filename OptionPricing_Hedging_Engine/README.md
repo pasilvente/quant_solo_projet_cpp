@@ -137,6 +137,7 @@ OptionPricing_Hedging_Engine/
       hedging_demo.cpp          # Delta-hedging P&L demo (daily vs weekly rebalancing)
   CMakeLists.txt
   README.md
+```
 
 
 ---
@@ -147,14 +148,14 @@ The project is built with CMake and requires a C++17 compiler.
 
 Typical out-of-source build:
 
-cmake -B build
-cmake --build build
+- cmake -B build
+- cmake --build build
 
 This creates the executables in build/:
 
-bs_mc_pde_demo
+- bs_mc_pde_demo
 
-hedging_demo
+- hedging_demo
 
 On Windows / MSVC, the project can also be built and run via the CMake Tools extension in VS Code.
 
@@ -167,6 +168,8 @@ On Windows / MSVC, the project can also be built and run via the CMake Tools ext
 The bs_mc_pde_demo executable prices a European call and an American put, and compares the different methods.
 
 For an European call (S0=100, K=100, T=1, r=5%, sigma=20%) :
+
+```text
 
 === European Call (S0=100, K=100, T=1, r=5%, sigma=20%) ===
 
@@ -195,10 +198,13 @@ MC (plain)          10.397115      0.053469
 MC (VR)             10.465984      0.015400
 PDE (CN)            10.440685      0.009898
 
+```
 
 This output shows: the plain MC estimate is within about one standard deviation of the analytical price, variance reduction significantly tightens the the confidence interval, the PDE Crank–Nicolson solution matches the analytical result up to a small discretisation error.
 
 For an American put (PDE obstacle vs Longstaff–Schwartz) :
+
+```text
 
 === American Put (PDE obstacle vs LSMC) ===
 
@@ -217,6 +223,8 @@ Method              Price
 PDE (obstacle)      6.078800
 LSMC                6.068449
 
+```
+
 
 Both methods produce very similar prices (well within one MC standard error), which is a good consistency check between the PDE and LSMC implementations.
 
@@ -225,6 +233,8 @@ Both methods produce very similar prices (well within one MC standard error), wh
 The hedging_demo executable simulates the P&L of a short European call hedged with the analytical delta, under Black–Scholes dynamics, for different rebalancing frequencies.
 
 Example output:
+
+```text
 
 === Delta-hedging P&L for a European call ===
 S0=100.000000, K=100.000000, T=1, r=5%, sigma=20%
@@ -240,6 +250,8 @@ Weekly hedging (52 steps):
   std  P&L = 0.960237
   min  P&L = -6.336752
   max  P&L = 4.707606
+
+```
 
 
 Interpretation: in a Black–Scholes world priced and hedged with the correct model, the mean P&L of the delta-hedged short option is close to zero (as expected). The P&L distribution is much tighter with daily hedging than with weekly hedging, which illustrates the impact of discrete rebalancing vs the continuous-time idealised theory.
