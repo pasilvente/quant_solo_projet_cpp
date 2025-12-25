@@ -98,7 +98,8 @@ and simulate the P&L of a short option position with discrete-time delta rebalan
 
 ## 3. Project structure
 
-pricing-engine-cpp/
+```text
+OptionPricing_Hedging_Engine/
   include/
     pricing/
       core/
@@ -136,6 +137,7 @@ pricing-engine-cpp/
       hedging_demo.cpp          # Delta-hedging P&L demo (daily vs weekly rebalancing)
   CMakeLists.txt
   README.md
+
 
 ---
 
