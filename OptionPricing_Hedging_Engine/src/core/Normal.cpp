@@ -1,4 +1,5 @@
-#include "Normal.hpp"
+// File: src/core/Normal.cpp
+#include "pricing/core/Normal.hpp"
 #include <cmath>
 
 namespace stats {
@@ -10,8 +11,8 @@ namespace stats {
     }
 
     double normal_cdf(double x) {
-        // N(x) = 0.5 * erfc(-x / sqrt(2))
+        // Formule standard : N(x) = 0.5 * erfc(-x / sqrt(2))
         return 0.5 * std::erfc(-x / std::sqrt(2.0));
     }
 
-}
+} // namespace stats

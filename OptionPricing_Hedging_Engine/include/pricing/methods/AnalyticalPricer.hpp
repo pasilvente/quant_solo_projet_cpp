@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Option.hpp"
-#include "BlackScholesModel.hpp"
+#include "pricing/core/Option.hpp"
+#include "pricing/core/BlackScholesModel.hpp"
 
 class AnalyticalPricer {
 public:
